@@ -16,7 +16,7 @@ const Main = () => {
     setSearchValue(e.target.value);
   };
 
-  // console.log(appReducer);
+  console.log(appReducer);
 
   useEffect(() => {
     dispatch(onLoadCardsData());
