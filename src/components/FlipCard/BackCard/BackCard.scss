@@ -1,0 +1,13 @@
+.back-btn-wrapper {
+  display: flex;
+  justify-content: end;
+
+  .btn {
+    border-radius: 20px;
+    font-size: 14px;
+
+    &::after {
+      content: "\2190";
+    }
+  }
+}

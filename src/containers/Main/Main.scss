@@ -1,0 +1,9 @@
+.app-wrapper {
+  padding: 20px;
+
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
