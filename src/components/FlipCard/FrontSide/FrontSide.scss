@@ -1,0 +1,41 @@
+.front-body-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .btn-and-texts-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+
+    .result-btn-wrapper {
+      display: flex;
+      justify-content: end;
+
+      .btn {
+        border-radius: 20px;
+        font-size: 14px;
+
+        &::after {
+          content: "\2192";
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .texts-wrapper {
+      text-align: end;
+    }
+  }
+}
