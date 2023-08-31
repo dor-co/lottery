@@ -8,7 +8,7 @@ export const mockData = [
     link: "/",
     // white side:
     dateTime: "12/5/2023", // same like 'time' ??
-    ballsList: [1, 2, 3, 4, 5, 6, 7, 8],
+    ballsList: [1, 2, 5, 3, 6, 7],
     pageLink: "/", // same like 'link' ??
   },
   {
@@ -20,7 +20,7 @@ export const mockData = [
     link: "/",
     // white side:
     dateTime: "12/5/2023", // same like 'time' ??
-    ballsList: [1, 2, 3, 4, 5, 6, 7, 8],
+    ballsList: [7, 8, 4, 5, 6, 2, 9, 3],
     pageLink: "/", // same like 'link' ??
   },
   {
@@ -32,7 +32,7 @@ export const mockData = [
     link: "/",
     // white side:
     dateTime: "12/5/2023", // same like 'time' ??
-    ballsList: [1, 2, 3, 4, 5, 6, 7, 8],
+    ballsList: [5, 6, 4, 3, 7],
     pageLink: "/", // same like 'link' ??
   },
 ];

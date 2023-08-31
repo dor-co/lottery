@@ -1,6 +1,7 @@
 import moment from "moment";
 import React from "react";
 import { Button } from "react-bootstrap";
+import Balls from "../../Balls";
 import "./BackSide.scss";
 const BackSide = ({ cardData, onCardFlip }) => {
   return (
@@ -13,7 +14,9 @@ const BackSide = ({ cardData, onCardFlip }) => {
           {moment(cardData.dateTime, "DD/MM/YYYY").format("LLL")}
         </div>
       </div>
-      <div className="balls-wrapper">balls</div>
+      <div className="balls-wrapper">
+        <Balls ballsList={cardData.ballsList} />
+      </div>
       <Button size="sm" variant="danger" className="btn-other-link">
         LINK TO
       </Button>

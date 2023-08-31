@@ -6,6 +6,7 @@
   .btn-and-texts-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     .back-btn-wrapper {
       display: flex;
       justify-content: end;
@@ -22,6 +23,7 @@
 
     .date {
       margin-right: 15px;
+      font-size: 14px;
     }
   }
 

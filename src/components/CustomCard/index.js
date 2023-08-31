@@ -6,7 +6,6 @@ import BackSide from "../FlipCard/BackSide";
 import moment from "moment";
 
 const CustomCard = ({ isFront, onCardFlip, cardData }) => {
-  console.log(cardData);
   return (
     <Card className="custom-card-wrapper">
       <Card.Body>
