@@ -8,7 +8,9 @@ export const onLoadCardsData = () => {
   return async (dispatch) => {
     dispatch(onSetIsLoading());
     try {
-      let response = await fetch("http://localhost:3001/api/cards");
+      let response = await fetch(
+        "http://localhost:3001/api/cards?page=1&itemsPerPage=10"
+      );
       let json = await response.json();
       dispatch(onSetCardsData(json));
     } catch (error) {

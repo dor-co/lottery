@@ -2,6 +2,7 @@ import { ON_SET_CARDS_DATA, ON_SET_IS_LOADING } from "./constants";
 
 const initialState = {
   cards: [],
+  totalLengthCards: null,
   isLoading: false,
 };
 
@@ -15,7 +16,8 @@ const appReducer = (state = initialState, action) => {
     case ON_SET_CARDS_DATA:
       return {
         ...state,
-        cards: action.data,
+        cards: action.data.cards,
+        totalLengthCards: action.data.totalLength,
       };
     default:
       return state;

@@ -9,12 +9,13 @@ import Loader from "../../components/Loader";
 const Main = () => {
   const { appReducer } = useSelector((state) => state);
 
-  const { isLoading, cards } = appReducer;
+  const { isLoading, cards, totalLengthCards } = appReducer;
 
   const dispatch = useDispatch();
 
   const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
+  const [numOfPages, setNumOfPages] = useState(null);
 
   useEffect(() => {
     dispatch(onLoadCardsData());
@@ -22,6 +23,10 @@ const Main = () => {
 
   useEffect(() => {
     setData(cards);
+
+    if (totalLengthCards) {
+      setNumOfPages(Math.ceil(totalLengthCards / 10));
+    }
   }, [cards]);
 
   useEffect(() => {
