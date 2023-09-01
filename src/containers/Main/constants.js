@@ -1,1 +1,1 @@
-export const ON_LOAD_CARDS_DATA = "main/ON_LOAD_CARDS_DATA";
+export const ON_SET_CARDS_DATA = "main/ON_SET_CARDS_DATA";

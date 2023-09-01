@@ -1,17 +1,15 @@
-import { mockData } from "../../utils/mockData";
-import { ON_LOAD_CARDS_DATA } from "./constants";
+import { ON_SET_CARDS_DATA } from "./constants";
 
 const initialState = {
-  test: "testtt",
   cards: [],
 };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ON_LOAD_CARDS_DATA:
+    case ON_SET_CARDS_DATA:
       return {
         ...state,
-        cards: mockData,
+        cards: action.data,
       };
     default:
       return state;
