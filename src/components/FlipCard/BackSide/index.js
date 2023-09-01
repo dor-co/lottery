@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 const BackSide = ({ cardData, onCardFlip }) => {
   const navigate = useNavigate();
 
+  const onHandleOtherLink = () => {
+    navigate("/test");
+  };
+
   return (
     <div className="back-body-wrapper">
       <div className="btn-and-texts-wrapper">
@@ -25,7 +29,7 @@ const BackSide = ({ cardData, onCardFlip }) => {
         size="sm"
         variant="danger"
         className="btn-other-link"
-        onClick={() => navigate("/test")}
+        onClick={onHandleOtherLink}
       >
         LINK TO
       </Button>
