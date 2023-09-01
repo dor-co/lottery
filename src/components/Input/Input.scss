@@ -3,8 +3,17 @@
   position: relative;
   width: fit-content;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   .form-control {
     width: 250px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     &.input-with-clear-btn {
       padding: 6px 26px 6px 12px;
     }
