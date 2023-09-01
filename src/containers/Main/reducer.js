@@ -1,11 +1,17 @@
-import { ON_SET_CARDS_DATA } from "./constants";
+import { ON_SET_CARDS_DATA, ON_SET_IS_LOADING } from "./constants";
 
 const initialState = {
   cards: [],
+  isLoading: false,
 };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ON_SET_IS_LOADING:
+      return {
+        ...state,
+        isLoading: !state.isLoading,
+      };
     case ON_SET_CARDS_DATA:
       return {
         ...state,

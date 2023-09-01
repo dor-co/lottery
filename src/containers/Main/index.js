@@ -4,9 +4,12 @@ import "./Main.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { onLoadCardsData } from "./actions";
 import Input from "../../components/Input";
+import Loader from "../../components/Loader";
 
 const Main = () => {
   const { appReducer } = useSelector((state) => state);
+
+  const { isLoading, cards } = appReducer;
 
   const dispatch = useDispatch();
 
@@ -18,11 +21,11 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    setData(appReducer.cards);
-  }, [appReducer.cards]);
+    setData(cards);
+  }, [cards]);
 
   useEffect(() => {
-    let filterData = [...appReducer.cards];
+    let filterData = [...cards];
     filterData = filterData.filter(
       (el) => el.lotteryName.includes(searchValue) || searchValue.trim() === ""
     );
@@ -39,16 +42,22 @@ const Main = () => {
 
   return (
     <div className="app-wrapper">
-      <Input
-        value={searchValue}
-        handleSearchChange={handleSearchChange}
-        handleClearSearch={handleClearSearch}
-      />
-      <div className="cards-wrapper">
-        {data.map((card, key) => {
-          return <FlipCard key={key} cardData={card} />;
-        })}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Input
+            value={searchValue}
+            handleSearchChange={handleSearchChange}
+            handleClearSearch={handleClearSearch}
+          />
+          <div className="cards-wrapper">
+            {data.map((card, key) => {
+              return <FlipCard key={key} cardData={card} />;
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 };
