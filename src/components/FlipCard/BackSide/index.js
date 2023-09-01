@@ -3,7 +3,11 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import Balls from "../../Balls";
 import "./BackSide.scss";
+import { useNavigate } from "react-router-dom";
+
 const BackSide = ({ cardData, onCardFlip }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="back-body-wrapper">
       <div className="btn-and-texts-wrapper">
@@ -17,7 +21,12 @@ const BackSide = ({ cardData, onCardFlip }) => {
       <div className="balls-wrapper">
         <Balls ballsList={cardData.ballsList} />
       </div>
-      <Button size="sm" variant="danger" className="btn-other-link">
+      <Button
+        size="sm"
+        variant="danger"
+        className="btn-other-link"
+        onClick={() => navigate("/test")}
+      >
         LINK TO
       </Button>
     </div>
