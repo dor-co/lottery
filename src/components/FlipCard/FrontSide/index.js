@@ -14,8 +14,8 @@ const FrontSide = ({ cardData, onCardFlip }) => {
           </Button>
         </div>
         <div className="texts-wrapper">
-          <div>{cardData.lotteryName}</div>
-          <div>{cardData.jackpotText}</div>
+          <span>{cardData.lotteryName}</span>
+          <span className="jackpot-text">{cardData.jackpotText}</span>
         </div>
       </div>
     </div>

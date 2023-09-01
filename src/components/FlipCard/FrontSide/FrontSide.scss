@@ -36,6 +36,14 @@
 
     .texts-wrapper {
       text-align: end;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: #fff;
+      font-weight: bold;
+      .jackpot-text {
+        font-size: 12px;
+      }
     }
   }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import "./Balls.scss";
 
 const Balls = ({ ballsList }) => {
-  console.log(ballsList);
   return (
     <div className="balls-list-wrapper">
       {ballsList.map((ball, key) => {

@@ -13,10 +13,6 @@ const Main = () => {
   const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
 
-  const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-
   useEffect(() => {
     dispatch(onLoadCardsData());
   }, []);
@@ -27,17 +23,27 @@ const Main = () => {
 
   useEffect(() => {
     let filterData = [...appReducer.cards];
-
     filterData = filterData.filter(
       (el) => el.lotteryName.includes(searchValue) || searchValue.trim() === ""
     );
-
     setData(filterData);
   }, [searchValue]);
 
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchValue("");
+  };
+
   return (
     <div className="app-wrapper">
-      <Input value={searchValue} handleSearchChange={handleSearchChange} />
+      <Input
+        value={searchValue}
+        handleSearchChange={handleSearchChange}
+        handleClearSearch={handleClearSearch}
+      />
       <div className="cards-wrapper">
         {data.map((card, key) => {
           return <FlipCard key={key} cardData={card} />;
