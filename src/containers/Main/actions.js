@@ -4,12 +4,12 @@ export const onSetCardsData = (data) => ({ type: ON_SET_CARDS_DATA, data });
 
 export const onSetIsLoading = () => ({ type: ON_SET_IS_LOADING });
 
-export const onLoadCardsData = () => {
+export const onLoadCardsData = (pageNumber = 1) => {
   return async (dispatch) => {
     dispatch(onSetIsLoading());
     try {
       let response = await fetch(
-        "http://localhost:3001/api/cards?page=1&itemsPerPage=10"
+        `http://localhost:3001/api/cards?page=${pageNumber}&itemsPerPage=10`
       );
       let json = await response.json();
       dispatch(onSetCardsData(json));

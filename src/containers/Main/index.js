@@ -5,11 +5,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { onLoadCardsData } from "./actions";
 import Input from "../../components/Input";
 import Loader from "../../components/Loader";
+import CustomPagination from "../../components/CustomPagination";
 
 const Main = () => {
   const { appReducer } = useSelector((state) => state);
 
-  const { isLoading, cards, totalLengthCards } = appReducer;
+  const { isLoading, cards, totalLengthCards, currentPage } = appReducer;
 
   const dispatch = useDispatch();
 
@@ -61,6 +62,14 @@ const Main = () => {
               return <FlipCard key={key} cardData={card} />;
             })}
           </div>
+
+          <CustomPagination
+            currentPage={currentPage}
+            numOfPages={numOfPages}
+            onLoadCardsData={(pageNumber) => {
+              dispatch(onLoadCardsData(pageNumber));
+            }}
+          />
         </>
       )}
     </div>

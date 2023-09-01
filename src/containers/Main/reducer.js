@@ -3,6 +3,7 @@ import { ON_SET_CARDS_DATA, ON_SET_IS_LOADING } from "./constants";
 const initialState = {
   cards: [],
   totalLengthCards: null,
+  currentPage: 1,
   isLoading: false,
 };
 
@@ -18,6 +19,7 @@ const appReducer = (state = initialState, action) => {
         ...state,
         cards: action.data.cards,
         totalLengthCards: action.data.totalLength,
+        currentPage: action.data.currentPage,
       };
     default:
       return state;
