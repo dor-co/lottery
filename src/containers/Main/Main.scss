@@ -8,4 +8,32 @@
       justify-content: center;
     }
   }
+
+  .custom-carousel-wrapper {
+    top: 50px;
+
+    .carousel-inner {
+      padding: 20px 0px;
+    }
+    .carousel-indicators {
+      display: none;
+    }
+    .custom-carousel {
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      height: fit-content;
+      top: 43%;
+
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+        background-color: #262626;
+        border-radius: 20px;
+        background-size: 20px;
+      }
+    }
+  }
 }
