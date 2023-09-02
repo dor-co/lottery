@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "react-bootstrap";
+import useWindowSize from "../../utils/useWindowSize";
 import "./CustomPagination.scss";
 
 const CustomPagination = ({ numOfPages, onLoadCardsData, currentPage }) => {
   const [items, setItems] = useState([]);
+
+  const { widthWindow } = useWindowSize();
 
   const onChangePage = (el) => {
     const pageChoose = el.target.text;
@@ -29,9 +32,13 @@ const CustomPagination = ({ numOfPages, onLoadCardsData, currentPage }) => {
   }, [numOfPages, currentPage]);
 
   return (
-    <div className="custom-pagination-wrapper">
-      <Pagination>{items}</Pagination>
-    </div>
+    <>
+      {widthWindow > 576 && (
+        <div className="custom-pagination-wrapper">
+          <Pagination>{items}</Pagination>
+        </div>
+      )}
+    </>
   );
 };
 
