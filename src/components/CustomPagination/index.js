@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "react-bootstrap";
+import "./CustomPagination.scss";
 
 const CustomPagination = ({ numOfPages, onLoadCardsData, currentPage }) => {
   const [items, setItems] = useState([]);
@@ -25,12 +26,12 @@ const CustomPagination = ({ numOfPages, onLoadCardsData, currentPage }) => {
     }
 
     setItems(subItems);
-  }, [currentPage]);
+  }, [numOfPages, currentPage]);
 
   return (
-    <>
+    <div className="custom-pagination-wrapper">
       <Pagination>{items}</Pagination>
-    </>
+    </div>
   );
 };
 
