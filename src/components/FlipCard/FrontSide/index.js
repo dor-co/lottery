@@ -1,9 +1,17 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "./FrontSide.scss";
+
 const FrontSide = ({ cardData, onCardFlip }) => {
+  const navigate = useNavigate();
+
+  const handleClickFrontCard = () => {
+    navigate(`/lottery-details?id=${cardData.id}`);
+  };
+
   return (
-    <div className="front-body-wrapper">
+    <div className="front-body-wrapper" onClick={handleClickFrontCard}>
       <div className="logo-wrapper">
         <img className="logo" src={cardData.logo} />
       </div>

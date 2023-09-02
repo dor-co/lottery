@@ -5,7 +5,8 @@ import CustomCard from "../CustomCard";
 const FlipCard = ({ cardData }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const onCardFlip = () => {
+  const onCardFlip = (e) => {
+    e.stopPropagation();
     setIsFlipped(!isFlipped);
   };
 
