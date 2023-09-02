@@ -70,7 +70,9 @@ const Main = () => {
   useEffect(() => {
     let filterData = [...cards];
     filterData = filterData?.filter(
-      (el) => el.lotteryName.includes(searchValue) || searchValue.trim() === ""
+      (el) =>
+        el.lotteryName?.toLowerCase()?.includes(searchValue?.toLowerCase()) ||
+        searchValue.trim() === ""
     );
     setData(filterData);
   }, [searchValue]);
