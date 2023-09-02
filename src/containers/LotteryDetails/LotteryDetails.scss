@@ -1,0 +1,46 @@
+.lottery-details-wrapper {
+  .back-btn-wrapper {
+    display: flex;
+    justify-content: end;
+    .back-btn {
+      border-radius: 20px;
+      &::before {
+        content: "\2190";
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    @media (max-width: 576px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .details-wrapper {
+    max-width: 600px;
+    margin: auto;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    background: rgba(133, 167, 203, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(75, 75, 75, 0.37);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .lottery-name {
+      font-weight: bold;
+    }
+
+    .sub-title {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+  }
+}

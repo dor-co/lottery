@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "./containers/Main";
-import Test from "./containers/Test";
+import LotteryDetails from "./containers/LotteryDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -8,7 +8,7 @@ export const routes = createBrowserRouter([
     element: <Main />,
   },
   {
-    path: "/test",
-    element: <Test />,
+    path: "/lottery-details",
+    element: <LotteryDetails />,
   },
 ]);

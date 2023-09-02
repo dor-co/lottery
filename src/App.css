@@ -4,6 +4,19 @@ body {
   font-family: "Nunito", sans-serif !important;
 }
 
+.app-wrapper {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-image: url("./images/white-background.png");
+  background-size: 100% 100%;
+}
+
+@media (max-width: 992px) {
+  .app-wrapper {
+    background-size: unset;
+  }
+}
+
 .App {
   text-align: center;
 }

@@ -32,7 +32,7 @@ const Main = () => {
 
   useEffect(() => {
     let filterData = [...cards];
-    filterData = filterData.filter(
+    filterData = filterData?.filter(
       (el) => el.lotteryName.includes(searchValue) || searchValue.trim() === ""
     );
     setData(filterData);
@@ -47,7 +47,7 @@ const Main = () => {
   };
 
   return (
-    <div className="app-wrapper">
+    <div className="main-wrapper">
       {isLoading ? (
         <Loader />
       ) : (
@@ -58,7 +58,7 @@ const Main = () => {
             handleClearSearch={handleClearSearch}
           />
           <div className="cards-wrapper">
-            {data.map((card, key) => {
+            {data?.map((card, key) => {
               return <FlipCard key={key} cardData={card} />;
             })}
           </div>

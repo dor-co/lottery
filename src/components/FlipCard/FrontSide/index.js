@@ -10,7 +10,7 @@ const FrontSide = ({ cardData, onCardFlip }) => {
       <div className="btn-and-texts-wrapper">
         <div className="result-btn-wrapper">
           <Button variant="light" onClick={onCardFlip}>
-            result
+            Result
           </Button>
         </div>
         <div className="texts-wrapper">

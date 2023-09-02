@@ -9,7 +9,7 @@ const BackSide = ({ cardData, onCardFlip }) => {
   const navigate = useNavigate();
 
   const onHandleOtherLink = () => {
-    navigate("/test");
+    navigate(`/lottery-details?id=${cardData.id}`);
   };
 
   return (
@@ -31,7 +31,7 @@ const BackSide = ({ cardData, onCardFlip }) => {
         className="btn-other-link"
         onClick={onHandleOtherLink}
       >
-        LINK TO
+        Lottery Details
       </Button>
     </div>
   );
