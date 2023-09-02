@@ -1,4 +1,15 @@
 .main-wrapper {
+  .actions-fields-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
   .cards-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +21,7 @@
   }
 
   .custom-carousel-wrapper {
-    top: 50px;
+    top: 40px;
 
     .carousel-inner {
       padding: 20px 0px;

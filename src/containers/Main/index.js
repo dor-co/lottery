@@ -8,6 +8,7 @@ import Loader from "../../components/Loader";
 import CustomPagination from "../../components/CustomPagination";
 import useWindowSize from "../../utils/useWindowSize";
 import { Carousel } from "react-bootstrap";
+import SortButtons from "../../components/SortButtons";
 
 const Main = () => {
   const { appReducer } = useSelector((state) => state);
@@ -22,6 +23,21 @@ const Main = () => {
   const [numOfPages, setNumOfPages] = useState(null);
   // desktop: 1, mobile: 2
   const [viewType, setViewType] = useState();
+
+  const sortButtonsList = [
+    {
+      value: "drawTime",
+      text: "Draw Time",
+    },
+    {
+      value: "jackpotText",
+      text: "Jackpot",
+    },
+    {
+      value: "lotteryName",
+      text: "Lottery Name",
+    },
+  ];
 
   useEffect(() => {
     if (widthWindow) {
@@ -67,32 +83,27 @@ const Main = () => {
     setSearchValue("");
   };
 
-  const carouselData = [
-    {
-      title: "Slide 1",
-      text: "This is the first slide.",
-    },
-    {
-      title: "Slide 2",
-      text: "Here comes the second slide.",
-    },
-    {
-      title: "Slide 3",
-      text: "And here is the third slide.",
-    },
-  ];
-
   return (
     <div className="main-wrapper">
       {isLoading || !widthWindow ? (
         <Loader />
       ) : (
         <>
-          <Input
-            value={searchValue}
-            handleSearchChange={handleSearchChange}
-            handleClearSearch={handleClearSearch}
-          />
+          <div className="actions-fields-wrapper">
+            <Input
+              value={searchValue}
+              handleSearchChange={handleSearchChange}
+              handleClearSearch={handleClearSearch}
+            />
+
+            <div className="sort-buttons-wrapper">
+              <SortButtons
+                sortButtonsList={sortButtonsList}
+                data={data}
+                setData={setData}
+              />
+            </div>
+          </div>
           {widthWindow > 576 ? (
             <div className="cards-wrapper">
               {data?.map((card, key) => {
