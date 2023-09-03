@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./FlipCard.scss";
-import { Card, Button } from "react-bootstrap";
-import BackCard from "./BackCard";
-import FrontCard from "./FrontCard";
+import CustomCard from "../CustomCard";
 
-const FlipCard = ({ isFrontSide }) => {
+const FlipCard = ({ cardData }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const onCardFlip = () => {
+  const onCardFlip = (e) => {
+    e.stopPropagation();
     setIsFlipped(!isFlipped);
   };
 
@@ -16,11 +15,10 @@ const FlipCard = ({ isFrontSide }) => {
       <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
         <div className="flip-card-inner">
           <div className="flip-card-wrapper flip-card-front">
-            <FrontCard onCardFlip={onCardFlip} />
+            <CustomCard isFront onCardFlip={onCardFlip} cardData={cardData} />
           </div>
-
           <div className="flip-card-wrapper flip-card-back">
-            <BackCard onCardFlip={onCardFlip} />
+            <CustomCard onCardFlip={onCardFlip} cardData={cardData} />
           </div>
         </div>
       </div>

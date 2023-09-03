@@ -1,9 +1,50 @@
-.app-wrapper {
-  padding: 20px;
+.main-wrapper {
+  .actions-fields-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
 
   .cards-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    @media (max-width: 576px), (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  .custom-carousel-wrapper {
+    top: 40px;
+
+    .carousel-inner {
+      padding: 20px 0px;
+    }
+    .carousel-indicators {
+      display: none;
+    }
+    .custom-carousel {
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      height: fit-content;
+      top: 43%;
+
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+        background-color: #262626;
+        border-radius: 20px;
+        background-size: 20px;
+      }
+    }
   }
 }

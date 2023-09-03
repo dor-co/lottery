@@ -1,6 +1,38 @@
 .input-wrapper {
-  margin: 20px 0px;
+  position: relative;
+  width: fit-content;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   .form-control {
     width: 250px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &.input-with-clear-btn {
+      padding: 6px 26px 6px 12px;
+    }
+  }
+
+  .clear-btn-input {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding: 0px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    &::after {
+      content: "\2715";
+      font-size: 12px;
+      font-weight: bold;
+    }
   }
 }

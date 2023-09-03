@@ -1,8 +1,13 @@
 import "./App.css";
-import Main from "./containers/Main";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
 
 const App = () => {
-  return <Main />;
+  return (
+    <div className="app-wrapper">
+      <RouterProvider router={routes} />
+    </div>
+  );
 };
 
 export default App;
