@@ -21,6 +21,7 @@ const Main = () => {
   const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
   const [numOfPages, setNumOfPages] = useState(null);
+
   // desktop: 1, mobile: 2
   const [viewType, setViewType] = useState();
 
