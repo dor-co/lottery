@@ -9,7 +9,7 @@ export const onLoadCardsData = (pageNumber = 1) => {
     dispatch(onSetIsLoading());
     try {
       let response = await fetch(
-        `http://localhost:3001/api/cards?page=${pageNumber}&itemsPerPage=10`
+        `https://the-lottery-backend.onrender.com//api/cards?page=${pageNumber}&itemsPerPage=10`
       );
       let json = await response.json();
       dispatch(onSetCardsData(json));
